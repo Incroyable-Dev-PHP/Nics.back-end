@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html Lang="fr">
-<head>     
-    <?php include "./includes/head.html"; ?>
-</head>
-<body>
-    <?php include "./includes/header.html";?>
-    <?php include "./includes/ul.html"; ?>
-    
-        <section class="container">
+class="container">
+<div class="row">
+    <nav class="col-md-4">
+        <div><?php include("includes/ul.inc.php"); ?></div>
+    </nav>
+    <section class="col-md-8">
+        <div>
+
             <?php
-                if (isset($_GET["about-me"])) {
-                    include "./pages/about-me.html";
-                } elseif (isset($_GET["my-dreams"])) {
-                    include "./pages/my-dreams.html";
-                } elseif (isset($_GET["my-passions"])) {  
-                    include "./pages/my-passions.html";
-                } else {
-                    include "./pages/home.html";
+                if (isset($_GET["add"])){
+                    include("includes/form.inc.html");
+                }else if (isset($_GET["debogage"])){
+                    phpinfo();
+                }else if(isset($_GET["concatenation"])){
+                    phpinfo();
+                }else if(isset($_GET["boucle"])){
+                    phpinfo();
+                }else if(isset($_GET["fonction"])){
+                    phpinfo();
+                }else if(isset($_GET["supprimer"])){
+                    phpinfo();
+                }else{
+                    echo '<a class="btn btn-primary " role=button" aria=disabled="true" href="index.php?add">ajouter des données</a>';
                 }
             ?>
-        </section>
-    <?php include "./includes/footer.html"; ?>
-</body>
-</html>
+        </div>
+    </section>
+</div>
